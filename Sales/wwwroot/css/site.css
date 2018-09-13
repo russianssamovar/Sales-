@@ -26,6 +26,13 @@ body {
     width: 20%;
     padding: 5px;
     text-align: center;
-
+}
+.p-count {
+    background: #E9F1DF;
+    border-radius: 30px;
+    text-align: center;
+    float: right;
+    width: 25px;
+    margin-left: 3px;
 }
 

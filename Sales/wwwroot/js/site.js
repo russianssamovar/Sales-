@@ -20,6 +20,8 @@ $(document).on("click", ".btn-addtocart.btn.btn-block.btn-primary",
         $(this).closest("tr").find('.count').hide();
         $(this).closest("tr").find('.btn-addtocart').html("Убрать из корзины");
         $(this).closest("tr").find('.btn-addtocart').prop('class', "btn-remove btn btn-block btn-primary");
+
+       
         $(".tbl-cart").append($(this).closest("tr"));
         CartSumm();
     });
@@ -35,16 +37,19 @@ $(document).on("click", ".btn-remove.btn.btn-block.btn-primary",
 
 function CartSumm() {
     var sum = 0;
+    var count = 0;
     $('.summ').html(sum);
     $('.tbl-cart').find('[name="Price"]').each(function() {
         sum += parseInt($(this).html());
         $('.summ').html(sum);
+        count++;
     });
     if (sum<2000) {
         $('.btn-checkout').prop('disabled','true');
     } else {
         $('.btn-checkout').removeAttr('disabled');
     }
+    $('.p-count').html(count);
 }
 
 $(document).on("click",
